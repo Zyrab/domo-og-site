@@ -1,0 +1,28 @@
+/* src/components/version-bar/version-bar.css */
+.version-bar {
+  background-color: var(--border-black);
+  color: #fff;
+  padding: 8px 32px;
+
+  font-family: 'Public Sans', sans-serif;
+  font-size: 0.85rem;
+}
+
+.version-bar__container {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.version-bar__cmd {
+  padding: 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.version-bar_dolar {
+  color: var(--accent-yellow)
+}
