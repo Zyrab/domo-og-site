@@ -8,3 +8,20 @@ export default function createCodeCopy({ tooltip, button, copy, copied }) {
     child: [createButton({ ...button, child: [createIcon(copy), createIcon(copied).show(false)] })],
   });
 }
+
+export function copyCode(e, btn) {
+  const code = btn.dataset.code;
+  const newHint = btn.dataset.change;
+  const tooltip = btn.nextSibling;
+  const oldHint = tooltip.textContent;
+  btn.children[0].style.display = "none";
+  btn.children[1].style.display = "inline-flex";
+  tooltip.textContent = newHint;
+
+  navigator.clipboard.writeText(code);
+  setTimeout(() => {
+    btn.children[0].style.display = "inline-flex";
+    btn.children[1].style.display = "none";
+    tooltip.textContent = oldHint;
+  }, 2000);
+}
