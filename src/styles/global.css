@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;700;900&family=Space+Mono:wght@400;700&display=swap");
+
+/* 1. THE VARIABLES (Your Master Theme) */
+:root {
+  /* Colors */
+  --primary-blue: #40c4ff;
+  --accent-yellow: #f4e04d;
+  --accent-pink: #ff80ab;
+  --main-bg: #f4f4f0;
+  --card-bg: #fafafa;
+  --border-black: #000000;
+
+  /* Borders & Shadows */
+  --border-width: 2px;
+  --shadow-offset: 6px;
+  --shadow-offset-sm: 4px;
+}
+
+/* Base Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: var(--main-bg);
+  font-family: "Public Sans", sans-serif;
+  color: var(--border-black);
+}
+
+/* Global Typography Utilities */
+.heading-bold {
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.mono {
+  font-family: "Space Mono", monospace;
+}
+
+/* Layout Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.grid {
+  display: grid;
+}
+
+.gap-sm {
+  gap: 8px;
+}
+
+.gap-md {
+  gap: 16px;
+}
+
+.gap-lg {
+  gap: 24px;
+}
+
+/* Neo-Brutalist Utilities */
+.neo-border {
+  border: var(--border-width) solid var(--border-black);
+}
+
+.neo-shadow {
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-black);
+}
+
+.neo-shadow-sm {
+  box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--border-black);
+}
+.icon-component {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
