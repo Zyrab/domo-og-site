@@ -1,22 +1,8 @@
 import Domo from "@zyrab/domo";
 
-const buttonVariants = {
-  base: "btn",
-  variants: {},
-  defaultVariants: {
-    variant: "primary",
-  },
-};
-
-function getClasses({ variant, className }) {
-  const v = variant || buttonVariants.defaultVariants.variant;
-
-  return [buttonVariants.base, buttonVariants.variants.variant[v], className].filter(Boolean).join(" ");
-}
-
 export default function Button({
   variant = "primary",
-  className,
+  cls = "",
   label = "",
   type = "button",
   disabled = false,
@@ -35,20 +21,32 @@ export default function Button({
     "nav-link": "btn-nav-link",
     "sidebar-link": "btn-sidebar-link",
   };
+
+  // 1. Determine if we are in "Icon Only" mode
+  const isIconOnly = !label && child.length > 0;
+
   const el = Domo(tag)
-    .cls(`btn ${variants[variant]}`)
+    .cls(`btn ${variants[variant]} ${cls}`)
     .attr({
       ...(tag === "a" ? { href, role: "button" } : { type }),
       ...(disabled && tag === "button" ? { disabled: "" } : {}),
+      // 2. Spread rest early so manual aria-labels can be overridden if needed
       ...rest,
     });
+
+  // 3. Automatic Accessibility Safeguard
+  // If there's no text label, we MUST have an aria-label.
+  // If the user forgot to provide one in ...rest, we can't guess the intent,
+  // but we can ensure the attribute exists or warn.
+  if (isIconOnly && !rest["aria-label"]) {
+    console.warn("Accessible name missing for icon-only button. Please provide an 'aria-label' in props.");
+  }
 
   if (tag === "a" && disabled) {
     el.attr({ "aria-disabled": "true", tabindex: "-1" });
   }
 
   const content = [...child, label ? Domo("span").txt(label) : null].filter(Boolean);
-
   el.child(content);
 
   if (onClick && !disabled) el.on("click", onClick);

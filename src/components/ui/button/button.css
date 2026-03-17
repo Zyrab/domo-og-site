@@ -34,7 +34,7 @@
   box-shadow: calc(var(--shadow-offset-sm) + 4px) calc(var(--shadow-offset-sm) + 4px) 0 var(--border-black);
 }
 
-.btn-physical:active:not(:disabled) {
+.btn-physical.active:not(:disabled) {
   transform: translateY(0) translateX(0);
   box-shadow: 0 0 0 var(--border-black);
 }
