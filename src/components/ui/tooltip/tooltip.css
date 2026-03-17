@@ -1,0 +1,84 @@
+/* 1. The Wrapper */
+/* This acts as the anchor point so the popup knows where to attach itself */
+.tooltip-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+/* 2. The Popup Bubble (Hidden by default) */
+.tooltip-popup {
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  white-space: nowrap;
+  z-index: 50;
+
+  /* Neo-Brutalist styling (borrowed directly from your badges!) */
+  font-family: "Public Sans", sans-serif;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.4rem;
+  border: 2px solid var(--border-black);
+  box-shadow: 2px 2px 0 var(--border-black);
+
+  /* Quick pop-in animation */
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
+  pointer-events: none; /* Prevents the tooltip from blocking clicks */
+}
+
+/* 3. The Hover/Focus Magic */
+/* When you hover over the wrapper, make the popup visible */
+.tooltip-wrapper:hover .tooltip-popup,
+.tooltip-wrapper:focus-within .tooltip-popup {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* 4. Positions */
+/* Math to push the popup to the correct side of the wrapper */
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(4px); /* Starts slightly lower */
+  margin-bottom: 8px;
+}
+.tooltip-wrapper:hover .tooltip-top,
+.tooltip-wrapper:focus-within .tooltip-top {
+  transform: translateX(-50%) translateY(0); /* Slides up to normal spot */
+}
+
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-4px);
+  margin-top: 8px;
+}
+.tooltip-wrapper:hover .tooltip-bottom,
+.tooltip-wrapper:focus-within .tooltip-bottom {
+  transform: translateX(-50%) translateY(0);
+}
+
+/* 5. Color Variants (Same as your badges) */
+.tooltip-yellow {
+  background-color: var(--accent-yellow);
+  color: #000;
+}
+.tooltip-dark {
+  background-color: var(--border-black);
+  color: #fff;
+}
+.tooltip-pink {
+  background-color: var(--accent-pink);
+  color: #000;
+}
+.tooltip-blue {
+  background-color: var(--primary-blue);
+  color: #000;
+}
+.tooltip-white {
+  background-color: #fff;
+  color: #000;
+}
