@@ -1,8 +1,7 @@
-/* src/components/version-bar/version-bar.css */
 .version-bar {
   background-color: var(--border-black);
   color: #fff;
-  padding: 8px 32px;
+  padding: 4px 8px;
 
   font-family: 'Public Sans', sans-serif;
   font-size: 0.85rem;
@@ -17,7 +16,7 @@
 }
 
 .version-bar__cmd {
-  padding: 0 12px;
+  padding: 0 8px;
   display: flex;
   align-items: center;
   gap: 8px;

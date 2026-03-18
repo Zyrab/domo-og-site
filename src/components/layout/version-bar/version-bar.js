@@ -5,6 +5,7 @@ import getLocales from "../../../assets/locales/get-locale.js";
 
 export default function createVersionBar() {
   const t = getLocales("en", "version_bar");
+
   return Domo("div")
     .cls("version-bar")
     .child([
