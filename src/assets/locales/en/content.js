@@ -1,5 +1,6 @@
 export const content = {
   header: {
+    title: "Domo-OG",
     nav: [
       { label: "Home", variant: "nav-link", href: "/" },
       { label: "Docs", variant: "nav-link", href: "/docs" },
@@ -22,7 +23,7 @@ export const content = {
       },
       copy: { icon: "copy" },
       tooltip: { text: "copy code", variant: "dark", position: "bottom" },
-      copied: { icon: "check_mark", alt: "code copied" },
+      copied: { icon: "check_mark", alt: "code copied", cls: "hidden" },
     },
     badge: { label: "v0.2.1", variant: "white" },
   },
@@ -63,5 +64,99 @@ export const content = {
       { variant: "benchmark", title: "WASM", description: "Cross-platform Engine", color: "yellow" },
     ],
     code_badge: { label: "No HTML/CSS Engine!", variant: "pink" },
+  },
+  featured: {
+    title: "Why Domo-OG?",
+    cards: [
+      {
+        bgColor: "primary",
+        icon: "speed",
+        title: "WASM Powered",
+        description:
+          "Cross-platform compatibility out of the box. No OS-specific binary downloads or fragile native modules.",
+      },
+      {
+        bgColor: "yellow",
+        icon: "gear",
+        title: "Config-Driven",
+        description:
+          "Define layouts, backgrounds, text, and images via simple JSON objects. No messing with raw SVG strings.",
+      },
+      {
+        bgColor: "pink",
+        icon: "floppy_disk",
+        title: "Built-in Caching",
+        description: "Prevents redundant generation with an internal manifest, drastically speeding up SSG builds.",
+      },
+      {
+        icon: "block",
+        title: "Zero HTML/CSS Engine",
+        description: "Uses Resvg for lightning-fast rendering. No browser or DOM required.",
+      },
+      {
+        bgColor: "yellow",
+        icon: "🌐",
+        title: "Remote Fetching",
+        description:
+          "Safely fetches and caches remote background images with built-in size limits to prevent memory issues.",
+      },
+    ],
+  },
+  playground: {
+    template_buttons: [{ label: "blog", key: "blog" }, { label: "store", key: "store" }, { label: "saas", key: "saas" }, { label: "event", key: "event" }, { label: "news", key: "news" },],
+    title: "Live Template Preview",
+    subtitle: "See how simple JSON configs map to stunning OG cards.",
+    note: "* Note: Some elements (like image width/height and text maxLength) act differently in this sandbox preview.",
+    og_preview: "Open Graph Preview",
+    code_copy: {
+      button: {
+        variant: "dark",
+        cls: "copy active",
+        "aria-label": "copy code",
+        "data-change": "code copied",
+      },
+      copy: { icon: "copy" },
+      tooltip: { text: "copy code", variant: "dark", position: "bottom" },
+      copied: { icon: "check_mark", alt: "code copied", cls: "hidden" },
+    },
+    editor_switcher: {
+      button: {
+        variant: "dark",
+        cls: "mode-switcher active",
+        "aria-label": "switch template editor mode",
+        "data-change": "switch to code",
+        "data-state": "0",
+      },
+      edit: { icon: "edit" },
+      tooltip: { text: "switch to editor", variant: "dark", position: "bottom" },
+      object: { icon: "object", cls: "hidden" },
+    },
+  },
+  footer: {
+    title: "Domo-OG",
+    description: "A blazing fast Open Graph image generator powered by Domo. Design with data, not DOM nodes.",
+    copy: "Created by Zyrab. Open-source under MIT License.",
+    links: {
+      title: "Links",
+      items: [
+        { label: "Home", variant: "link", href: "/" },
+        { label: "Docs", variant: "link", href: "/docs" },
+        { label: "Playground", variant: "link", href: "/#playground" },
+      ]
+    },
+    resources: {
+      title: "Resources",
+      items: [
+        { label: "GitHub", variant: "link", icon: "github", href: "https://github.com/zyrab/domo/tree/main/packages/domo-og" },
+        { label: "NPM", variant: "link", icon: "npm", href: "https://www.npmjs.com/package/@zyrab/domo-og" },
+      ]
+    },
+    socials: {
+      title: "Socials",
+      items: [
+        { label: "Twitter", variant: "link", icon: "twitter", href: "https://twitter.com/zyramedia" },
+        { label: "Discord", variant: "link", icon: "discord", href: "https://discord.gg/zyramedia" },
+      ]
+    },
   },
 };

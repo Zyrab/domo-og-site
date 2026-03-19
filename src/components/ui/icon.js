@@ -2,7 +2,7 @@ import Domo from "@zyrab/domo";
 import DSVG from "@zyrab/domo-svg";
 import icons from "../../assets/preview-images/icons.js";
 
-export default function createIcon({ icon, size, alt = "" }) {
+export default function createIcon({ icon, size, alt = "", cls }) {
   let child;
   if (!size) {
     console.warn(`Icon ${icon} missing 'size'. Set the size property or style manually via CSS.`);
@@ -11,7 +11,7 @@ export default function createIcon({ icon, size, alt = "" }) {
 
   if (typeof icon === "string" && !iconLib?.viewBox) {
     child = Domo("img")
-      .css(size ? { width: size, height: size } : "")
+      .css(size ? { width: `${size}px`, height: `${size}px` } : "")
       .attr({
         loading: "lazy",
         src: icon,
@@ -43,5 +43,6 @@ export default function createIcon({ icon, size, alt = "" }) {
 
   return Domo("span")
     .cls("icon-component")
+    .cls(cls)
     .child(child ? [child] : []);
 }
