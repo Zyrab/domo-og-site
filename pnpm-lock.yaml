@@ -14,14 +14,33 @@ importers:
       '@zyrab/domo-router':
         specifier: ^0.3.1
         version: 0.3.1
+      '@zyrab/domo-ssg':
+        specifier: ^0.5.4
+        version: 0.5.4(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.3.0)
       '@zyrab/domo-svg':
         specifier: ^0.1.2
         version: 0.1.2(@zyrab/domo@1.3.0)
 
 packages:
 
+  '@resvg/resvg-wasm@2.6.2':
+    resolution: {integrity: sha512-FqALmHI8D4o6lk/LRWDnhw95z5eO+eAa6ORjVg09YRR7BkcM6oPHU9uyC0gtQG5vpFLvgpeU4+zEAz2H8APHNw==}
+    engines: {node: '>= 10'}
+
+  '@zyrab/domo-og@0.2.0':
+    resolution: {integrity: sha512-BphfutBY5Llutop9lDZevRligx2eTqaDsJD8Z5nlN3tzml6QuHmFpo7HWjz4IiE4udQ8oUNXudd1Bz4HKb355w==}
+    engines: {node: '>=18.0.0'}
+
   '@zyrab/domo-router@0.3.1':
     resolution: {integrity: sha512-NcUjhgSACJj9xccmNjZRcc0R1IUIFkqe/4j1/lq4hHK9AijO+pP9GKlv0RhFnTzwqIOzWGfg8BcOUvNEa5r+yQ==}
+
+  '@zyrab/domo-ssg@0.5.4':
+    resolution: {integrity: sha512-SVlkpwxuFHx9IemDmsz9H7NX2VxoZKrrDQx83LSTVHLrHAtF/k4evtjjBWOSnqDm2yYOJAbZ93k8W9rdwB2h+Q==}
+    hasBin: true
+    peerDependencies:
+      '@zyrab/domo': ^1.3.0
+      '@zyrab/domo-og': 0.2.0
+      '@zyrab/domo-router': ^0.3.1
 
   '@zyrab/domo-svg@0.1.2':
     resolution: {integrity: sha512-U/ag2jVfM5JY+g1gVwj7EFa3X+ImE7vy4x0QAMrzU56pZo7R4kRABalPrx1HlzFz+uGJYPGLIdXwxtn6PpEcSQ==}
@@ -33,7 +52,19 @@ packages:
 
 snapshots:
 
+  '@resvg/resvg-wasm@2.6.2': {}
+
+  '@zyrab/domo-og@0.2.0':
+    dependencies:
+      '@resvg/resvg-wasm': 2.6.2
+
   '@zyrab/domo-router@0.3.1': {}
+
+  '@zyrab/domo-ssg@0.5.4(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.3.0)':
+    dependencies:
+      '@zyrab/domo': 1.3.0
+      '@zyrab/domo-og': 0.2.0
+      '@zyrab/domo-router': 0.3.1
 
   '@zyrab/domo-svg@0.1.2(@zyrab/domo@1.3.0)':
     dependencies:
