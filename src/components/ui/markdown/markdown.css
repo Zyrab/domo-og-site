@@ -1,0 +1,263 @@
+/* src/components/ui/markdown/markdown.css */
+
+.markdown-body {
+  line-height: 1.6;
+  color: var(--border-black, #000);
+}
+
+.md-h1,
+.md-h2,
+.md-h3,
+.md-h4 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.md-h1 {
+  font-size: 2.5rem;
+  background: var(--primary-blue);
+  padding: 0.5rem 1rem;
+  border: 3px solid var(--border-black);
+  display: inline-block;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  box-shadow: 4px 4px 0 var(--border-black);
+}
+
+.md-h2 {
+  font-size: 2rem;
+  border-bottom: 4px solid var(--accent-yellow);
+  padding-bottom: 0.25rem;
+}
+
+.md-h3 {
+  font-size: 1.5rem;
+  color: var(--accent-pink);
+}
+
+.md-p {
+  margin-bottom: 1.25rem;
+  font-size: 1.1rem;
+}
+
+.md-ul,
+.md-ol {
+  margin-bottom: 1.25rem;
+  padding-left: 1.5rem;
+}
+
+.md-li {
+  margin-bottom: 0.5rem;
+}
+
+.md-blockquote {
+  border-left: 8px solid var(--accent-yellow);
+  padding: 1rem 1.5rem;
+  background: var(--card-bg, #fafafa);
+  margin: 1.5rem 0;
+  font-style: italic;
+  border: 3px solid var(--border-black);
+  border-left: 12px solid var(--accent-yellow);
+  box-shadow: 4px 4px 0 var(--border-black);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: 2rem 0;
+  border: 3px solid var(--border-black);
+  box-shadow: 6px 6px 0 var(--border-black);
+}
+
+.md-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+}
+
+.md-th,
+.md-td {
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--border-black);
+  text-align: left;
+}
+
+.md-th {
+  background: var(--accent-yellow);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.md-td {
+  font-family: var(--font-mono, monospace);
+}
+
+.md-hr {
+  border: none;
+  border-top: 4px dashed var(--border-black);
+  margin: 3rem 0;
+}
+
+.md-img {
+  max-width: 100%;
+  border: 3px solid var(--border-black);
+  box-shadow: 8px 8px 0 var(--border-black);
+  display: block;
+  margin: 2rem auto;
+}
+
+.inline-code {
+  background: #eee;
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  border: 1px solid var(--border-black);
+}
+
+/* Ensure code highlighting from parse-code.js also looks neo-brutalist */
+.flex.p-0\.5.bg-pprim {
+  background: var(--accent-yellow) !important;
+  border: 3px solid var(--border-black);
+  border-bottom: none;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.code-container {
+  border: 3px solid var(--border-black);
+  box-shadow: 6px 6px 0 var(--border-black);
+
+  .code-header {
+    background: var(--accent-yellow);
+    font-weight: 900;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+
+    p {
+      margin: 0;
+      font-size: 0.8rem;
+    }
+
+    .copyCode {
+      background: var(--border-black);
+      color: #fff;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border: 2px solid var(--border-black);
+      cursor: pointer;
+      padding: 0.2rem 0.4rem;
+    }
+
+    .copyCode:hover {
+      background: var(--accent-pink);
+      color: var(--border-black);
+    }
+  }
+
+  pre {
+    background: #ffffff !important;
+    color: var(--border-black) !important;
+    padding: 1.5rem !important;
+    margin: 0;
+    font-family: var(--font-mono, "Space Mono", monospace);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    overflow-x: auto;
+  }
+}
+
+/* Syntax Highlighting Tokens - Neo-Brutalist Palette */
+.comment {
+  color: #999;
+  font-style: italic;
+}
+
+.keyword {
+  color: var(--accent-pink);
+  font-weight: 900;
+}
+
+.string,
+.template-string {
+  color: #009688;
+}
+
+.number,
+.boolean {
+  color: #e65100;
+}
+
+.function {
+  color: #c62828;
+  font-weight: 700;
+}
+
+.operator {
+  color: var(--border-black);
+  font-weight: 700;
+}
+
+.class,
+.object {
+  color: #7b1fa2;
+  font-weight: 900;
+}
+
+.property {
+  color: #546e7a;
+}
+
+.regex {
+  color: #d32f2f;
+}
+
+/* HTML Tokens */
+.tag {
+  color: #1976d2;
+  font-weight: 900;
+}
+
+.attribute {
+  color: #7b1fa2;
+}
+
+.doctype {
+  color: #999;
+}
+
+.entity {
+  color: #e65100;
+}
+
+/* CSS Tokens */
+.selector {
+  color: var(--accent-pink);
+  font-weight: 900;
+}
+
+.at-rule,
+.media-query {
+  color: #e65100;
+}
+
+.pseudo-class,
+.pseudo-element {
+  color: #1976d2;
+}
+
+.id {
+  color: #d32f2f;
+  font-weight: 900;
+}
+
+.unit {
+  color: #009688;
+}
+
+.value {
+  color: #388e3c;
+}
