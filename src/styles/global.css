@@ -59,6 +59,10 @@ body {
   justify-content: center;
 }
 
+.justify-start {
+  justify-content: start;
+}
+
 .grid {
   display: grid;
 }
@@ -87,8 +91,13 @@ body {
 .neo-shadow-sm {
   box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--border-black);
 }
+
 .icon-component {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+.hidden {
+  display: none;
 }
