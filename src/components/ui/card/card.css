@@ -1,0 +1,17 @@
+/* src/components/card/card.css */
+.card {
+  background-color: var(--card-bg);
+  border: var(--border-width) solid var(--border-black);
+  box-shadow: var(--shadow-offset) var(--shadow-offset) 0 var(--border-black);
+  padding: 24px; /* Standard padding */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card--sm {
+  padding: 16px;
+}
+
+.card--hoverable:hover {
+  transform: translateY(-6px) translateX(-6px);
+  box-shadow: calc(var(--shadow-offset) + 6px) calc(var(--shadow-offset) + 6px) 0 var(--border-black);
+}
