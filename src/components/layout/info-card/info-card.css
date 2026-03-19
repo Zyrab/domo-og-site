@@ -1,0 +1,89 @@
+/* src/components/info-card/info-card.css */
+.info-card {
+  display: flex;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  height: 100%;
+}
+
+.info-card:hover {
+  transform: translateY(-6px) translateX(-6px);
+  box-shadow: calc(var(--shadow-offset) + 6px) calc(var(--shadow-offset) + 6px) 0 var(--border-black);
+}
+
+/* Feature Variant */
+.info-card--feature {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.info-card__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  border: 2px solid var(--border-black);
+}
+
+.info-card__title--feature {
+  font-weight: 900;
+  font-size: 1.25rem;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.info-card__desc--feature {
+  font-size: 0.9rem;
+  font-weight: 900;
+  margin: 0;
+  opacity: 0.6;
+}
+
+/* Benchmark Variant */
+.info-card--benchmark {
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  /* Make it smaller */
+}
+
+.info-card__title--benchmark {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-bottom: 8px;
+  line-height: 1;
+}
+
+.info-card__desc--benchmark {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: var(--border-black);
+  opacity: 0.8;
+}
+
+/* Value Colors */
+.text-primary {
+  color: var(--primary-blue);
+}
+
+.text-yellow {
+  color: var(--accent-yellow);
+}
+
+.text-pink {
+  color: var(--accent-pink);
+}
+
+.bg-primary {
+  background-color: var(--primary-blue);
+}
+
+.bg-yellow {
+  background-color: var(--accent-yellow);
+}
+
+.bg-pink {
+  background-color: var(--accent-pink);
+}
