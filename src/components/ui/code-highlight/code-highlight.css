@@ -1,0 +1,31 @@
+/* src/components/ui/code-highlight/code-highlight.css */
+.code-highlight {
+  color: #000000;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 900;
+  white-space: pre-wrap;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Tokens */
+.token-string {
+  color: #0277bd;
+  font-weight: 700;
+}
+
+.token-keyword {
+  color: #c62828;
+  font-weight: 900;
+}
+
+.token-comment {
+  color: rgba(0, 0, 0, 0.5);
+  font-style: italic;
+}
+
+.token-operator {
+  color: #000;
+  font-weight: 900;
+}
