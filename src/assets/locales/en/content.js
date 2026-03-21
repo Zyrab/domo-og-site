@@ -95,7 +95,7 @@ export const content = {
       },
       {
         bgColor: "yellow",
-        icon: "🌐",
+        icon: "globe",
         title: "Remote Fetching",
         description:
           "Safely fetches and caches remote background images with built-in size limits to prevent memory issues.",
@@ -103,7 +103,13 @@ export const content = {
     ],
   },
   playground: {
-    template_buttons: [{ label: "blog", key: "blog" }, { label: "store", key: "store" }, { label: "saas", key: "saas" }, { label: "event", key: "event" }, { label: "news", key: "news" },],
+    template_buttons: [
+      { label: "blog", key: "blog" },
+      { label: "store", key: "store" },
+      { label: "saas", key: "saas" },
+      { label: "event", key: "event" },
+      { label: "news", key: "news" },
+    ],
     title: "Live Template Preview",
     subtitle: "See how simple JSON configs map to stunning OG cards.",
     note: "* Note: Some elements (like image width/height and text maxLength) act differently in this sandbox preview.",
@@ -142,21 +148,26 @@ export const content = {
         { label: "Home", variant: "link", href: "/" },
         { label: "Docs", variant: "link", href: "/docs" },
         { label: "Playground", variant: "link", href: "/#playground" },
-      ]
+      ],
     },
     resources: {
       title: "Resources",
       items: [
-        { label: "GitHub", variant: "link", icon: "github", href: "https://github.com/zyrab/domo/tree/main/packages/domo-og" },
+        {
+          label: "GitHub",
+          variant: "link",
+          icon: "github",
+          href: "https://github.com/zyrab/domo/tree/main/packages/domo-og",
+        },
         { label: "NPM", variant: "link", icon: "npm", href: "https://www.npmjs.com/package/@zyrab/domo-og" },
-      ]
+      ],
     },
     socials: {
       title: "Socials",
       items: [
         { label: "Twitter", variant: "link", icon: "twitter", href: "https://twitter.com/zyramedia" },
         { label: "Discord", variant: "link", icon: "discord", href: "https://discord.gg/zyramedia" },
-      ]
+      ],
     },
   },
 };
