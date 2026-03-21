@@ -18,12 +18,14 @@ export default function createFooter() {
           Domo("div")
             .cls("footer__left")
             .child([
-              Domo("div").cls("footer__logo").child([
-                createIcon({ icon: "src/assets/domo-og.png", size: 40 }),
-                Domo("span").cls("heading-bold").txt(t.title),
-              ]),
+              Domo("div")
+                .cls("footer__logo")
+                .child([
+                  createIcon({ icon: "/assets/domo-og.png", size: 40 }),
+                  Domo("span").cls("heading-bold").txt(t.title),
+                ]),
               Domo("p").cls("footer__desc").txt(t.description),
-              Domo("p").cls("footer__copy").txt(`${copy}${t.copy}`)
+              Domo("p").cls("footer__copy").txt(`${copy}${t.copy}`),
             ]),
           Domo("div")
             .cls("footer__right")
@@ -32,15 +34,19 @@ export default function createFooter() {
                 .cls("footer__col")
                 .child([
                   Domo("span").cls("footer__col-title").txt(t.links.title),
-                  t.links.items.map(link => createButton(link).css({ "justify-content": "start" }))
+                  t.links.items.map((link) => createButton(link).css({ "justify-content": "start" })),
                 ]),
               Domo("div")
                 .cls("footer__col")
                 .child([
                   Domo("span").cls("footer__col-title").txt(t.resources.title),
-                  t.resources.items.map(link => createButton({ ...link, child: [createIcon({ icon: link.icon })] }).css({ "justify-content": "start" }))
-                ])
-            ])
-        ])
-    ])
+                  t.resources.items.map((link) =>
+                    createButton({ ...link, target: "_blank", child: [createIcon({ icon: link.icon })] }).css({
+                      "justify-content": "start",
+                    }),
+                  ),
+                ]),
+            ]),
+        ]),
+    ]);
 }

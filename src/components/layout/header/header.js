@@ -22,17 +22,13 @@ export default function createHeader() {
                 .attr({ href: "/" })
                 .cls("header__logo")
                 .child([
-                  createIcon({ icon: "src/assets/domo-og.png", size: 32 }),
+                  createIcon({ icon: "assets/domo-og.png", size: 32 }),
                   Domo("span").cls("heading-bold").txt(t.title),
                 ]),
               Domo("label")
                 .attr({ for: "header-toggle" })
                 .cls("header__mobile-toggle burger-menu")
-                .child([
-                  Domo("div").cls("bar bar1"),
-                  Domo("div").cls("bar bar2"),
-                  Domo("div").cls("bar bar3"),
-                ]),
+                .child([Domo("div").cls("bar bar1"), Domo("div").cls("bar bar2"), Domo("div").cls("bar bar3")]),
             ]),
           Domo("div")
             .cls("header__menu")
@@ -43,7 +39,10 @@ export default function createHeader() {
                 .child(t.nav.map((nav) => createButton(nav).cls(nav.href === path ? "active" : ""))),
               Domo("div")
                 .cls("header__right")
-                .child(t.buttons.map((b) => createButton({ ...b, child: [createIcon({ icon: b.icon })] })))]),
+                .child(
+                  t.buttons.map((b) => createButton({ ...b, target: "_blank", child: [createIcon({ icon: b.icon })] })),
+                ),
+            ]),
         ]),
     ]);
 }
