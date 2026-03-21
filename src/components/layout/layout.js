@@ -1,7 +1,6 @@
 import Router from "@zyrab/domo-router";
 import createHeader from "./header/header.js";
 import createFooter from "./footer/footer.js";
-import createVersionBar from "./version-bar/version-bar.js";
 // import createHeader from "  ";
 export async function renderLayout(content, data) {
   const {
@@ -26,17 +25,17 @@ export async function renderLayout(content, data) {
   const scriptTags = scripts
     .map((file) =>
       file.preload
-        ? `<link rel="preload" as="script" href="/js/${file.href}">
-          <script defer src="/js/${file.href}"></script>`
-        : `<script defer src="/js/${file.href || file}"></script>`
+        ? `<link rel="preload" type="module" as="script" href="/js/${file.href}">
+          <script type="module" defer src="/js/${file.href}"></script>`
+        : `<script type="module" defer src="/js/${file.href || file}"></script>`,
     )
     .join("\n");
 
   const styleTags = styles
     .map((style) =>
       style.preload
-        ? `<link rel="preload" href="/css/${style.href}" as="style" onload="this.rel='stylesheet'">`
-        : `<link rel="stylesheet" href="/css/${style.href || style}">`
+        ? `<link rel="preload" href="/styles/${style.href}" as="style" onload="this.rel='stylesheet'">`
+        : `<link rel="stylesheet" href="/styles/${style.href || style}">`,
     )
     .join("\n");
 
@@ -44,7 +43,7 @@ export async function renderLayout(content, data) {
     .map((font) =>
       font.preload
         ? `<link rel="preload" href="/assets/fonts/${font.href}" as="font" type="font/woff2" crossorigin="anonymous">`
-        : `<link rel="stylesheet" href="assets/fonts/${font.href || font}">`
+        : `<link rel="stylesheet" href="assets/fonts/${font.href || font}">`,
     )
     .join("\n");
 
@@ -106,7 +105,6 @@ export async function renderLayout(content, data) {
 <body>
   ${createHeader().build()}
   <main>
-    ${createVersionBar().build()}
     ${content.build()}
   </main>
   ${createFooter().build()}
