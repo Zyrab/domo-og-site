@@ -2,10 +2,12 @@ import Domo from "@zyrab/domo";
 import createInfoCard from "../components/layout/info-card/info-card.js";
 import createHero from "../components/layout/hero/hero.js";
 import createPlayground from "../components/layout/playground/playground.js";
-
+import createVersionBar from "../components/layout/version-bar/version-bar.js";
 import getLocales from "../assets/locales/get-locale.js";
+
 import { copyCode } from "../components/composed/code-copy.js";
-import { toggleTemplateEditor } from "../components/layout/playground/template-editor-switcher.js";
+import { changeTemplate } from "../components/layout/playground/handlers/handle-change-template.js";
+import { toggleTemplateEditor } from "../components/layout/playground/handlers/handle-toggle-template-editor.js";
 
 export default function createLandingPage() {
   const f = getLocales("en", "featured");
@@ -13,6 +15,7 @@ export default function createLandingPage() {
     .cls("landing-page")
     .id("landing-page")
     .child([
+      createVersionBar(),
       createHero(),
       Domo("section")
         .cls("features")
@@ -22,5 +25,9 @@ export default function createLandingPage() {
         ]),
       createPlayground(),
     ])
-    .onClosest("click", { ".copy": copyCode, ".mode-switcher": toggleTemplateEditor });
+    .onClosest("click", {
+      ".copy": copyCode,
+      ".mode-switcher": toggleTemplateEditor,
+      ".change-template": changeTemplate,
+    });
 }
