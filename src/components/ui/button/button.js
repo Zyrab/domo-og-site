@@ -7,6 +7,7 @@ export default function Button({
   type = "button",
   disabled = false,
   href = null,
+  target = "",
   onClick = null,
   child = [],
   ...rest
@@ -28,7 +29,7 @@ export default function Button({
   const el = Domo(tag)
     .cls(`btn ${variants[variant]} ${cls}`)
     .attr({
-      ...(tag === "a" ? { href, role: "button" } : { type }),
+      ...(tag === "a" ? { href, role: "button", target } : { type }),
       ...(disabled && tag === "button" ? { disabled: "" } : {}),
       // 2. Spread rest early so manual aria-labels can be overridden if needed
       ...rest,
