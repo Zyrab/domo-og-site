@@ -9,17 +9,17 @@ importers:
   .:
     dependencies:
       '@zyrab/domo':
-        specifier: ^1.4.0
-        version: 1.4.0
+        specifier: ^1.5.0
+        version: 1.5.0
       '@zyrab/domo-router':
         specifier: ^0.3.1
         version: 0.3.1
       '@zyrab/domo-ssg':
-        specifier: ^0.6.0
-        version: 0.6.0(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.4.0)
+        specifier: ^0.7.1
+        version: 0.7.1(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.5.0)
       '@zyrab/domo-svg':
         specifier: ^0.1.3
-        version: 0.1.3(@zyrab/domo@1.4.0)
+        version: 0.1.3(@zyrab/domo@1.5.0)
       esbuild:
         specifier: ^0.27.4
         version: 0.27.4
@@ -193,11 +193,11 @@ packages:
   '@zyrab/domo-router@0.3.1':
     resolution: {integrity: sha512-NcUjhgSACJj9xccmNjZRcc0R1IUIFkqe/4j1/lq4hHK9AijO+pP9GKlv0RhFnTzwqIOzWGfg8BcOUvNEa5r+yQ==}
 
-  '@zyrab/domo-ssg@0.6.0':
-    resolution: {integrity: sha512-xzlnrDtygrOqBicRLq03k1oUXsDjlbmZ1c2Z+4rRmfHQIMarZkvbLBBOOaV7HWdyQHQoVq5h8fndc4zrko0+XQ==}
+  '@zyrab/domo-ssg@0.7.1':
+    resolution: {integrity: sha512-ZHFTHassMatFzLWAzWp+jSngNSKUoXAzbqhETtt12pyJrwr0H9KmY/7oPb9oDVB4IL452vQIdlOLjbrnzA4kcg==}
     hasBin: true
     peerDependencies:
-      '@zyrab/domo': ^1.4.0
+      '@zyrab/domo': ^1.5.0
       '@zyrab/domo-og': 0.2.1
       '@zyrab/domo-router': ^0.3.1
 
@@ -206,8 +206,8 @@ packages:
     peerDependencies:
       '@zyrab/domo': 1.4.0
 
-  '@zyrab/domo@1.4.0':
-    resolution: {integrity: sha512-Xz36EyOow403lJXXabxS9py6l7WFRVT4TnoahvJGI/oPedmn53jcHUZ0PhgidsUwdVIPaqcjj4QCdiMqxbuRcA==}
+  '@zyrab/domo@1.5.0':
+    resolution: {integrity: sha512-/7+pmpEJUUWwSDz0dGtrZJ5CsRae5XJ3d0QXGmPgayI8lvDzR0ut2UQIffUzzcaNIy28eLPl7N4U8KywpWCvtg==}
 
   esbuild@0.27.4:
     resolution: {integrity: sha512-Rq4vbHnYkK5fws5NF7MYTU68FPRE1ajX7heQ/8QXXWqNgqqJ/GkmmyxIzUnf2Sr/bakf8l54716CcMGHYhMrrQ==}
@@ -302,17 +302,17 @@ snapshots:
 
   '@zyrab/domo-router@0.3.1': {}
 
-  '@zyrab/domo-ssg@0.6.0(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.4.0)':
+  '@zyrab/domo-ssg@0.7.1(@zyrab/domo-og@0.2.0)(@zyrab/domo-router@0.3.1)(@zyrab/domo@1.5.0)':
     dependencies:
-      '@zyrab/domo': 1.4.0
+      '@zyrab/domo': 1.5.0
       '@zyrab/domo-og': 0.2.0
       '@zyrab/domo-router': 0.3.1
 
-  '@zyrab/domo-svg@0.1.3(@zyrab/domo@1.4.0)':
+  '@zyrab/domo-svg@0.1.3(@zyrab/domo@1.5.0)':
     dependencies:
-      '@zyrab/domo': 1.4.0
+      '@zyrab/domo': 1.5.0
 
-  '@zyrab/domo@1.4.0': {}
+  '@zyrab/domo@1.5.0': {}
 
   esbuild@0.27.4:
     optionalDependencies:
