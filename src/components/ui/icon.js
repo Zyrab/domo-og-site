@@ -4,9 +4,9 @@ import icons from "../../assets/preview-images/icons.js";
 
 export default function createIcon({ icon, size, alt = "", cls }) {
   let child;
-  if (!size) {
-    console.warn(`Icon ${icon} missing 'size'. Set the size property or style manually via CSS.`);
-  }
+  // if (!size) {
+  //   console.warn(`Icon ${icon} missing 'size'. Set the size property or style manually via CSS.`);
+  // }
   const iconLib = icons?.[icon] || icon;
 
   if (typeof icon === "string" && !iconLib?.viewBox) {
