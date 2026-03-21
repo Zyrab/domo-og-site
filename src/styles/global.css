@@ -22,7 +22,35 @@
 *::after {
   box-sizing: border-box;
 }
+button,
+input,
+select,
+textarea {
+  /* 1. Strip the default OS-level styling (bevels, native dropdown arrows, etc.) */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 
+  /* 2. Strip borders and backgrounds */
+  border: none;
+  background: transparent;
+
+  /* 3. Reset the box model */
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* 4. Force inputs to use YOUR website's font, not the browser default */
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+
+/* Optional: Stop textareas from breaking your layout horizontally */
+textarea {
+  resize: vertical;
+}
 body {
   margin: 0;
   background-color: var(--main-bg);
