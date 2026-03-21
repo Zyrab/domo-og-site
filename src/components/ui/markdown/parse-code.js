@@ -41,23 +41,26 @@ export const parseCode = (code, name) => {
     },
     copy: { icon: "copy" },
     tooltip: { text: "copy code", variant: "dark", position: "bottom" },
-    copied: { icon: "check_mark", alt: "code copied" },
-  }
+    copied: { icon: "check_mark", alt: "code copied", cls: "hidden" },
+  };
 
-  return Domo().cls("code-container").child([
-    Domo().cls("code-header").child([
-      Domo("p").txt(name),
-      codeCopy(code_copy),
-    ]),
-    Domo("pre").child([Domo("code").child(styledCode)]),
-  ]);
+  return Domo()
+    .cls("code-container")
+    .child([
+      Domo()
+        .cls("code-header")
+        .child([Domo("p").txt(name), codeCopy(code_copy)]),
+      Domo("pre").child([Domo("code").child(styledCode)]),
+    ]);
 };
-
 
 const regex = {
   js: [
     { type: "comment", pattern: /\/\/[^\n]*|\/\*[\s\S]*?\*\// },
-    { type: "keyword", pattern: /\b(let|const|var|if|else|for|while|do|switch|case|break|continue|return|import|export)\b/ },
+    {
+      type: "keyword",
+      pattern: /\b(let|const|var|if|else|for|while|do|switch|case|break|continue|return|import|export)\b/,
+    },
     { type: "string", pattern: /(["'`])(?:(?=(\\?))\2.)*?\1/ },
     { type: "number", pattern: /\b\d+(\.\d+)?\b/ },
     { type: "boolean", pattern: /\b(true|false|null)\b/ },
