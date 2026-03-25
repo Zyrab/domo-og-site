@@ -2,7 +2,7 @@ export const templates = {
   blog: {
     background: {
       type: "image",
-      src: "src/assets/preview-images/blog-bg.webp",
+      src: "assets/preview-images/blog-bg.webp",
     },
     elements: [
       {
@@ -17,7 +17,7 @@ export const templates = {
       },
       {
         type: "image",
-        src: "src/assets/preview-images/blog-profile.webp",
+        src: "assets/preview-images/blog-profile.webp",
         horizontalAlign: "right",
         verticalAlign: "middle",
         width: 240,

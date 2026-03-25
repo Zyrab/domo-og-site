@@ -151,7 +151,7 @@ export const content = {
   footer: {
     title: "Domo-OG",
     description: "A blazing fast Open Graph image generator powered by Domo. Design with data, not DOM nodes.",
-    copy: "Created by Zyrab. Open-source under MIT License.",
+    copy: "Open-source under MIT License.",
     links: {
       title: "Links",
       items: [
@@ -175,8 +175,10 @@ export const content = {
     socials: {
       title: "Socials",
       items: [
-        { label: "Twitter", variant: "link", icon: "twitter", href: "https://twitter.com/zyramedia" },
-        { label: "Discord", variant: "link", icon: "discord", href: "https://discord.gg/zyramedia" },
+        { variant: "link", icon: "github", "aria-label": "GitHub", target: "_blank", href: "https://github.com/zyrab" },
+        { variant: "link", icon: "linkedin", "aria-label": "LinkedIn", target: "_blank", href: "https://linkedin.com/company/zyrab" },
+        { variant: "link", icon: "x", "aria-label": "X", target: "_blank", href: "https://x.com/zyrab" },
+        // { variant: "link", icon: "discord", "aria-label": "Discord", target: "_blank", href: "https://discord.gg/zyramedia" },
       ],
     },
   },
