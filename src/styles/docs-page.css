@@ -48,25 +48,6 @@ html {
   max-width: 900px;
 }
 
-/* Mobile Responsiveness */
-@media (max-width: 992px) {
-  .docs-layout {
-    flex-direction: column;
-  }
-
-  .docs-sidebar {
-    width: 100%;
-    height: auto;
-    position: static;
-    border-right: none;
-    border-bottom: 3px solid var(--border-black);
-    padding: 2rem 0;
-  }
-
-  .docs-content {
-    padding: 2rem 0;
-  }
-}
 
 .container {
   width: 100%;
@@ -97,4 +78,26 @@ html {
 
 .bold {
   font-weight: 900;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+  .docs-layout {
+    flex-direction: column;
+  }
+
+  .docs-sidebar {
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important; /* Changed from static to relative to be safe */
+    top: 0 !important;
+    border-right: none;
+    border-bottom: 3px solid var(--border-black);
+    padding: 2rem 0;
+    overflow-y: visible;
+  }
+
+  .docs-content {
+    padding: 2rem 0;
+  }
 }

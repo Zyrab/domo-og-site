@@ -176,8 +176,8 @@ export const content = {
       title: "Socials",
       items: [
         { variant: "link", icon: "github", "aria-label": "GitHub", target: "_blank", href: "https://github.com/zyrab" },
-        { variant: "link", icon: "linkedin", "aria-label": "LinkedIn", target: "_blank", href: "https://linkedin.com/company/zyrab" },
-        { variant: "link", icon: "x", "aria-label": "X", target: "_blank", href: "https://x.com/zyrab" },
+        { variant: "link", icon: "linkedin", "aria-label": "LinkedIn", target: "_blank", href: "https://www.linkedin.com/in/zurakruashvili/" },
+        { variant: "link", icon: "x", "aria-label": "X", target: "_blank", href: "https://x.com/Goospringdrumm" },
         // { variant: "link", icon: "discord", "aria-label": "Discord", target: "_blank", href: "https://discord.gg/zyramedia" },
       ],
     },
