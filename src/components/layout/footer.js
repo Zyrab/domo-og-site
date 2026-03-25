@@ -25,7 +25,6 @@ export default function createFooter() {
                   Domo("span").cls("heading-bold").txt(t.title),
                 ]),
               Domo("p").cls("footer__desc").txt(t.description),
-              Domo("p").cls("footer__copy").txt(`${copy}${t.copy}`),
             ]),
           Domo("div")
             .cls("footer__right")
@@ -48,5 +47,30 @@ export default function createFooter() {
                 ]),
             ]),
         ]),
+      Domo("div").cls("footer__container").child([
+        Domo("div")
+          .cls("footer__copy")
+          .child([
+            createIcon({ icon: "assets/zrb.png", size: 24 }),
+            createButton({
+              label: "Zyrab",
+              href: "https://zyrab.dev",
+              variant: "link",
+              target: "_blank",
+            }),
+            Domo("p").txt(`${copy}${t.copy}`),
+          ]),
+        Domo("div")
+          .cls("footer__socials")
+          .child(
+            t.socials.items.map((link) =>
+              createButton({
+                ...link,
+                child: [createIcon({ icon: link.icon, size: 24 })],
+              }),
+            ),
+          ),
+
+      ])
     ]);
 }
