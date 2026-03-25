@@ -50,6 +50,10 @@
   background-color: var(--border-black);
   color: #fff;
 }
+.btn-pink {
+  background-color: var(--accent-pink);
+  color: #fff;
+}
 
 .btn-outline {
   background-color: transparent;

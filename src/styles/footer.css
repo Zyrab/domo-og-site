@@ -40,7 +40,7 @@
   text-decoration: none;
   color: var(--border-black);
   padding: 6px 14px;
-  background-color: #fff;
+  background-color: var(--accent-yellow);
   border: var(--border-width) solid var(--primary-blue);
   box-shadow: var(--shadow-offset-sm) var(--shadow-offset-sm) 0 var(--primary-blue);
   transition: all 0.1s ease;
