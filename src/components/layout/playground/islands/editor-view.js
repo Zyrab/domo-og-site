@@ -1,4 +1,3 @@
-import Domo from "@zyrab/domo";
 import { defultTemplate } from "./defaut-template.js";
 import createTemplateCode from "./template-code.js";
 import createTemplateEditor from "./template-editor.js";
