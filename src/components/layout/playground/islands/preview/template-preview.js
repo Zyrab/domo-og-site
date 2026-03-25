@@ -44,14 +44,14 @@ export default function createTemplatePreview(template) {
     .child([
       template.background?.type === "image"
         ? Domo("img").attr({ src: template.background.src }).css({
-            position: "absolute",
-            top: "0",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            objectFit: "cover",
-            zIndex: "0",
-          })
+          position: "absolute",
+          top: "0",
+          left: "0",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: "0",
+        })
         : Domo(),
       Domo()
         .css({
