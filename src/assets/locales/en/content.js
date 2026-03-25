@@ -7,8 +7,18 @@ export const content = {
       { label: "Playground", variant: "nav-link", href: "/#playground" },
     ],
     buttons: [
-      { icon: "npm", label: "NPM", variant: "dark", href: "https://www.npmjs.com/package/@zyrab/domo-og" },
-      { icon: "github", label: "Github", href: "https://github.com/zyrab/domo/tree/main/packages/domo-og" },
+      {
+        icon: "npm",
+        label: "NPM",
+        cls: "bg-npm",
+        href: "https://www.npmjs.com/package/@zyrab/domo-og",
+      },
+      {
+        icon: "github",
+        label: "Github",
+        variant: "dark",
+        href: "https://github.com/zyrab/domo/tree/main/packages/domo-og",
+      },
     ],
   },
   version_bar: {

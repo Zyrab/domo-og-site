@@ -1,7 +1,7 @@
 // src/components/info-card/info-card.js
 import Domo from "@zyrab/domo";
-import createCard from "../../ui/card/card.js";
-import createIcon from "../../ui/icon.js";
+import createCard from "../ui/card.js";
+import createIcon from "../ui/icon.js";
 
 export default function createInfoCard(props = {}) {
   const { variant = "feature", title = "", description = "", icon = "", color = "", bgColor = "" } = props;

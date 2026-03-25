@@ -1,10 +1,10 @@
 // src/components/layout/hero/hero.js
 import Domo from "@zyrab/domo";
-import createBadge from "../../ui/badge/badge.js";
-import createButton from "../../ui/button/button.js";
-import createInfoCard from "../info-card/info-card.js";
-import createCodeHighlight from "../../ui/code-highlight/code-highlight.js";
-import getLocales from "../../../assets/locales/get-locale.js";
+import createBadge from "../ui/badge.js";
+import createButton from "../ui/button.js";
+import createInfoCard from "./info-card.js";
+import createCodeHighlight from "../ui/code-highlight.js";
+import getLocales from "../../assets/locales/get-locale.js";
 export default function createHero() {
   const t = getLocales("en", "hero");
 

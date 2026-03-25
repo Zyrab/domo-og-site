@@ -1,7 +1,7 @@
 import Domo from "@zyrab/domo";
-import createBadge from "../../ui/badge/badge.js";
-import createCodeCopy from "../../composed/code-copy.js";
-import getLocales from "../../../assets/locales/get-locale.js";
+import createBadge from "../ui/badge.js";
+import createCodeCopy from "../composed/code-copy.js";
+import getLocales from "../../assets/locales/get-locale.js";
 
 export default function createVersionBar() {
   const t = getLocales("en", "version_bar");

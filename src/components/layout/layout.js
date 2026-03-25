@@ -1,6 +1,6 @@
 import Router from "@zyrab/domo-router";
-import createHeader from "./header/header.js";
-import createFooter from "./footer/footer.js";
+import createHeader from "./header.js";
+import createFooter from "./footer.js";
 // import createHeader from "  ";
 export async function renderLayout(content, data) {
   const {

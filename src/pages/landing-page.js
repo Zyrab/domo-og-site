@@ -1,8 +1,8 @@
 import Domo from "@zyrab/domo";
-import createInfoCard from "../components/layout/info-card/info-card.js";
-import createHero from "../components/layout/hero/hero.js";
+import createInfoCard from "../components/layout/info-card.js";
+import createHero from "../components/layout/hero.js";
 import createPlayground from "../components/layout/playground/playground.js";
-import createVersionBar from "../components/layout/version-bar/version-bar.js";
+import createVersionBar from "../components/layout/version-bar.js";
 import getLocales from "../assets/locales/get-locale.js";
 
 import { copyCode } from "../components/composed/code-copy.js";

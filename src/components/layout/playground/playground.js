@@ -1,10 +1,10 @@
 // src/components/layout/playground/playground.js
 import Domo from "@zyrab/domo";
 
-import createButton from "../../ui/button/button.js";
+import createButton from "../../ui/button.js";
 import createIcon from "../../ui/icon.js";
 import createCodeCopy from "../../composed/code-copy.js";
-import createTooltip from "../../ui/tooltip/tooltip.js";
+import createTooltip from "../../ui/tooltip.js";
 
 import createEditorView from "./islands/editor-view.js";
 import createPreviewView from "./islands/preview-view.js";

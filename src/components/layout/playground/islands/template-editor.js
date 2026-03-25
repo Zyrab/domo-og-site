@@ -1,7 +1,7 @@
 import Domo from "@zyrab/domo";
-import createInput from "../../../ui/input/input.js";
-import createSelect from "../../../ui/select/select.js";
-import createButton from "../../../ui/button/button.js";
+import createInput from "../../../ui/input.js";
+import createSelect from "../../../ui/select.js";
+import createButton from "../../../ui/button.js";
 import createTemplatePreview from "./preview/template-preview.js";
 import createTemplateCode from "./template-code.js";
 
@@ -89,45 +89,45 @@ export default function createTemplateEditor(template) {
               }),
               ...(el.type === "text"
                 ? [
-                    createInput({ label: "Content", type: "text", value: el.content || "", name: `el-${i}-content` }),
-                    createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
-                    createInput({
-                      label: "Font Size",
-                      type: "number",
-                      value: el.fontSize || 32,
-                      name: `el-${i}-fontSize`,
-                    }),
-                    createInput({ label: "Color", type: "color", value: el.color || "#000000", name: `el-${i}-color` }),
-                    createInput({
-                      label: "Background Col",
-                      type: "text",
-                      value: el.backgroundColor || "transparent",
-                      name: `el-${i}-backgroundColor`,
-                    }),
-                    createInput({
-                      label: "Max Length",
-                      type: "number",
-                      value: el.maxLength || "",
-                      name: `el-${i}-maxLength`,
-                    }),
-                    createInput({
-                      label: "BG Padding",
-                      type: "number",
-                      value: el.bgPadding || 0,
-                      name: `el-${i}-bgPadding`,
-                    }),
-                    createInput({
-                      label: "Border Radius",
-                      type: "number",
-                      value: el.borderRadius || 0,
-                      name: `el-${i}-borderRadius`,
-                    }),
-                  ]
+                  createInput({ label: "Content", type: "text", value: el.content || "", name: `el-${i}-content` }),
+                  createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
+                  createInput({
+                    label: "Font Size",
+                    type: "number",
+                    value: el.fontSize || 32,
+                    name: `el-${i}-fontSize`,
+                  }),
+                  createInput({ label: "Color", type: "color", value: el.color || "#000000", name: `el-${i}-color` }),
+                  createInput({
+                    label: "Background Col",
+                    type: "text",
+                    value: el.backgroundColor || "transparent",
+                    name: `el-${i}-backgroundColor`,
+                  }),
+                  createInput({
+                    label: "Max Length",
+                    type: "number",
+                    value: el.maxLength || "",
+                    name: `el-${i}-maxLength`,
+                  }),
+                  createInput({
+                    label: "BG Padding",
+                    type: "number",
+                    value: el.bgPadding || 0,
+                    name: `el-${i}-bgPadding`,
+                  }),
+                  createInput({
+                    label: "Border Radius",
+                    type: "number",
+                    value: el.borderRadius || 0,
+                    name: `el-${i}-borderRadius`,
+                  }),
+                ]
                 : [
-                    createInput({ label: "Image URL", type: "text", value: el.src || "", name: `el-${i}-src` }),
-                    createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
-                    createInput({ label: "Height", type: "number", value: el.height || "", name: `el-${i}-height` }),
-                  ]),
+                  createInput({ label: "Image URL", type: "text", value: el.src || "", name: `el-${i}-src` }),
+                  createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
+                  createInput({ label: "Height", type: "number", value: el.height || "", name: `el-${i}-height` }),
+                ]),
               createSelect({
                 label: "Horizontal Align",
                 options: [

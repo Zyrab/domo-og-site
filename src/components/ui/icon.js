@@ -1,6 +1,6 @@
 import Domo from "@zyrab/domo";
 import DSVG from "@zyrab/domo-svg";
-import icons from "../../assets/preview-images/icons.js";
+import icons from "../../assets/icons.js";
 
 export default function createIcon({ icon, size, alt = "", cls }) {
   let child;

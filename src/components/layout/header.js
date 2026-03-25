@@ -1,8 +1,8 @@
 import Domo from "@zyrab/domo";
 import Router from "@zyrab/domo-router";
-import createButton from "../../ui/button/button.js";
-import getLocales from "../../../assets/locales/get-locale.js";
-import createIcon from "../../ui/icon.js";
+import createButton from "../ui/button.js";
+import getLocales from "../../assets/locales/get-locale.js";
+import createIcon from "../ui/icon.js";
 
 export default function createHeader() {
   const path = Router.base();

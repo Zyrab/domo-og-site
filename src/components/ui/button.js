@@ -17,6 +17,7 @@ export default function Button({
   const variants = {
     primary: "btn-physical btn-primary",
     dark: "btn-physical btn-dark",
+    pink: "btn-physical btn-pink",
     outline: "btn-physical btn-outline",
     link: "btn-link",
     "nav-link": "btn-nav-link",

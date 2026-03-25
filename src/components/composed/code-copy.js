@@ -1,6 +1,6 @@
-import createButton from "../ui/button/button.js";
+import createButton from "../ui/button.js";
 import createIcon from "../ui/icon.js";
-import createTooltip from "../ui/tooltip/tooltip.js";
+import createTooltip from "../ui/tooltip.js";
 
 export default function createCodeCopy({ tooltip, button, copy, copied }) {
   return createTooltip({

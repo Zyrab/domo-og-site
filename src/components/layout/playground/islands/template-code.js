@@ -1,5 +1,5 @@
 import Domo from "@zyrab/domo";
-import createCodeHighlight from "../../../ui/code-highlight/code-highlight.js";
+import createCodeHighlight from "../../../ui/code-highlight.js";
 
 export default function createTemplateCode(template) {
   let code = "";

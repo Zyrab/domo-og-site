@@ -1,8 +1,8 @@
 // src/pages/docs-page.js
 import Domo from "@zyrab/domo";
-import createVersionBar from "../components/layout/version-bar/version-bar.js";
+import createVersionBar from "../components/layout/version-bar.js";
 import createMarkdown from "../components/ui/markdown/markdown.js";
-import createButton from "../components/ui/button/button.js";
+import createButton from "../components/ui/button.js";
 import { copyCode } from "../components/composed/code-copy.js";
 
 import { fetchText } from "../components/composed/fetch.js";

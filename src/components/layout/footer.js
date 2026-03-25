@@ -1,8 +1,8 @@
 // src/components/footer/footer.js
 import Domo from "@zyrab/domo";
-import createButton from "../../ui/button/button.js";
-import createIcon from "../../ui/icon.js";
-import getLocales from "../../../assets/locales/get-locale.js";
+import createButton from "../ui/button.js";
+import createIcon from "../ui/icon.js";
+import getLocales from "../../assets/locales/get-locale.js";
 
 export default function createFooter() {
   const currentYear = new Date().getFullYear();

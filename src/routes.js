@@ -1,9 +1,8 @@
 // src/routes.js
 import createLandingPage from "./pages/landing-page.js";
 import createDocsPage from "./pages/docs-page.js";
-import createHeader from "./components/layout/header/header.js";
-import createFooter from "./components/layout/footer/footer.js";
-import createVersionBar from "./components/layout/version-bar/version-bar.js";
+import createHeader from "./components/layout/header.js";
+import createFooter from "./components/layout/footer.js";
 
 export const routes = {
   layouts: {
@@ -20,6 +19,7 @@ export const routes = {
     meta: {
       title: "Domo-OG - A blazing-fast Open Graph image generator",
       description: "Design with data, not DOM nodes.",
+      ogImage: "assets/domo-og-open-graph.png",
     },
   },
   "/docs": {
