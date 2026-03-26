@@ -10,7 +10,7 @@ import Domo from "@zyrab/domo";
  * @param {string} [props.group] - Optional group name for exclusive behavior.
  */
 export default function createAccordion({ label, children, open = false, single = "never", group = "default" }) {
-  const id = Math.random().toString(36).substr(2, 9);
+  const id = Math.random().toString(36).slice(2, 11);
   return Domo("details")
     .cls("accordion")
     .attr({ open })
