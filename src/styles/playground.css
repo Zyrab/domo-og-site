@@ -111,7 +111,7 @@
 
 .playground__pane-content {
   flex: 1;
-  padding: 24px;
+  padding: 16px;
   overflow-y: auto;
   min-height: 0;
 }
@@ -256,7 +256,7 @@
 }
 
 .accordion__content {
-  padding: 16px;
+  padding: 1rem 0.4rem;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -307,7 +307,6 @@
   color: #fff;
 }
 
-
 .form-input-color {
   width: 32px;
   height: 32px;
@@ -328,7 +327,6 @@
 .element-row > * {
   flex: 1;
 }
-
 
 .form-input-color::-webkit-color-swatch-wrapper {
   padding: 0;

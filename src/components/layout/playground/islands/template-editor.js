@@ -9,7 +9,6 @@ import createTemplateCode from "./template-code.js";
 export default function createTemplateEditor(template) {
   let localTemplate = template;
   let editorRef = null;
-  let openAccordionLabel = "Global Settings"; // Track open accordion
 
   function notifyChange() {
     if (editorRef) {
@@ -81,7 +80,8 @@ export default function createTemplateEditor(template) {
           return createAccordion({
             label,
             group: "editor-elements",
-            isOpen: openAccordionLabel === label,
+            open: i === 0,
+            single: "once",
             children: [
               createSelect({
                 label: `Type`,
@@ -94,57 +94,102 @@ export default function createTemplateEditor(template) {
               }),
               ...(el.type === "text"
                 ? [
-                  createInput({ label: "Content", type: "text", value: el.content || "", name: `el-${i}-content` }),
-                  Domo("div").cls("element-row").child([
-                    createInput({ label: "Color", type: "color", value: el.color || "#000000", name: `el-${i}-color` }),
-                    createInput({ label: "BG Color", type: "color", value: el.backgroundColor || "transparent", name: `el-${i}-backgroundColor` }),
-                  ]),
-                  Domo("div").cls("element-row").child([
-                    createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
-                    createInput({ label: "Font Size", type: "number", value: el.fontSize || 32, name: `el-${i}-fontSize` }),
-                  ]),
-                  Domo("div").cls("element-row").child([
-                    createInput({ label: "Max Length", type: "number", value: el.maxLength || "", name: `el-${i}-maxLength` }),
-                    createInput({ label: "BG Padding", type: "number", value: el.bgPadding || 0, name: `el-${i}-bgPadding` }),
-                  ]),
-
-                ]
+                    createInput({ label: "Content", type: "text", value: el.content || "", name: `el-${i}-content` }),
+                    Domo("div")
+                      .cls("element-row")
+                      .child([
+                        createInput({
+                          label: "Color",
+                          type: "color",
+                          value: el.color || "#000000",
+                          name: `el-${i}-color`,
+                        }),
+                        createInput({
+                          label: "BG Color",
+                          type: "color",
+                          value: el.backgroundColor || "transparent",
+                          name: `el-${i}-backgroundColor`,
+                        }),
+                      ]),
+                    Domo("div")
+                      .cls("element-row")
+                      .child([
+                        createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
+                        createInput({
+                          label: "Font Size",
+                          type: "number",
+                          value: el.fontSize || 32,
+                          name: `el-${i}-fontSize`,
+                        }),
+                      ]),
+                    Domo("div")
+                      .cls("element-row")
+                      .child([
+                        createInput({
+                          label: "Max Length",
+                          type: "number",
+                          value: el.maxLength || "",
+                          name: `el-${i}-maxLength`,
+                        }),
+                        createInput({
+                          label: "BG Padding",
+                          type: "number",
+                          value: el.bgPadding || 0,
+                          name: `el-${i}-bgPadding`,
+                        }),
+                      ]),
+                  ]
                 : [
-                  createInput({ label: "Image URL", type: "text", value: el.src || "", name: `el-${i}-src` }),
-                  Domo("div").cls("element-row").child([
-                    createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
-                    createInput({ label: "Height", type: "number", value: el.height || "", name: `el-${i}-height` }),
+                    createInput({ label: "Image URL", type: "text", value: el.src || "", name: `el-${i}-src` }),
+                    Domo("div")
+                      .cls("element-row")
+                      .child([
+                        createInput({ label: "Width", type: "number", value: el.width || "", name: `el-${i}-width` }),
+                        createInput({
+                          label: "Height",
+                          type: "number",
+                          value: el.height || "",
+                          name: `el-${i}-height`,
+                        }),
+                      ]),
                   ]),
+              Domo("div")
+                .cls("element-row")
+                .child([
+                  createSelect({
+                    label: "H-Align",
+                    options: [
+                      { value: "left", label: "Left" },
+                      { value: "center", label: "Center" },
+                      { value: "right", label: "Right" },
+                    ],
+                    value: el.horizontalAlign || "left",
+                    name: `el-${i}-horizontalAlign`,
+                  }),
+                  createSelect({
+                    label: "V-Align",
+                    options: [
+                      { value: "top", label: "Top" },
+                      { value: "middle", label: "Middle" },
+                      { value: "bottom", label: "Bottom" },
+                    ],
+                    value: el.verticalAlign || "top",
+                    name: `el-${i}-verticalAlign`,
+                  }),
                 ]),
-              Domo("div").cls("element-row").child([
-                createSelect({
-                  label: "H-Align",
-                  options: [
-                    { value: "left", label: "Left" },
-                    { value: "center", label: "Center" },
-                    { value: "right", label: "Right" },
-                  ],
-                  value: el.horizontalAlign || "left",
-                  name: `el-${i}-horizontalAlign`,
-                }),
-                createSelect({
-                  label: "V-Align",
-                  options: [
-                    { value: "top", label: "Top" },
-                    { value: "middle", label: "Middle" },
-                    { value: "bottom", label: "Bottom" },
-                  ],
-                  value: el.verticalAlign || "top",
-                  name: `el-${i}-verticalAlign`,
-                }),
-              ]),
-              Domo("div").cls("element-row").child([
-                createInput({ label: "Padding", type: "number", value: el.padding || 0, name: `el-${i}-padding` }),
-                createInput({ label: "Border Radius", type: "number", value: el.borderRadius || 0, name: `el-${i}-borderRadius` }),
-              ]),
-
+              Domo("div")
+                .cls("element-row")
+                .child([
+                  createInput({ label: "Padding", type: "number", value: el.padding || 0, name: `el-${i}-padding` }),
+                  createInput({
+                    label: "Border Radius",
+                    type: "number",
+                    value: el.borderRadius || 0,
+                    name: `el-${i}-borderRadius`,
+                  }),
+                ]),
             ],
-          }).on("click", () => (openAccordionLabel = label));
+          });
         }),
       );
   }
@@ -155,32 +200,25 @@ export default function createTemplateEditor(template) {
       Domo("div")
         .cls("playground-form")
         .child([
-          createAccordion({
-            label: "Global Settings",
-            group: "editor-elements",
-            isOpen: openAccordionLabel === "Global Settings",
-            children: [
-              createSelect({
-                label: "Background Type",
-                options: [
-                  { value: "color", label: "Color" },
-                  { value: "image", label: "Image" },
-                ],
-                value: localTemplate.background?.type || "color",
-                name: "bg-type",
-              }),
-              createInput({
-                label: localTemplate.background?.type === "image" ? "Background URL" : "Background Color",
-                type: localTemplate.background?.type === "color" ? "color" : "text",
-                value:
-                  localTemplate.background?.type === "image"
-                    ? localTemplate.background?.src || ""
-                    : localTemplate.background?.value || "#ffffff",
-                name: localTemplate.background?.type === "image" ? "bg-src" : "bg-value",
-              }),
-
+          createSelect({
+            label: "Background Type",
+            options: [
+              { value: "color", label: "Color" },
+              { value: "image", label: "Image" },
             ],
-          }).on("click", () => (openAccordionLabel = "Global Settings")),
+            value: localTemplate.background?.type || "color",
+            name: "bg-type",
+          }),
+          createInput({
+            label: localTemplate.background?.type === "image" ? "Background URL" : "Background Color",
+            type: localTemplate.background?.type === "color" ? "color" : "text",
+            value:
+              localTemplate.background?.type === "image"
+                ? localTemplate.background?.src || ""
+                : localTemplate.background?.value || "#ffffff",
+            name: localTemplate.background?.type === "image" ? "bg-src" : "bg-value",
+          }),
+
           Domo("div")
             .cls("flex gap-sm items-center")
             .css({ justifyContent: "space-between", padding: "0 16px" })
