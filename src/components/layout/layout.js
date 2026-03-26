@@ -70,6 +70,7 @@ export async function renderLayout(content, data) {
 
   <!-- Social: OpenGraph -->
   <meta property="og:title" content="${title}">
+  <meta property="og:site_name" content="Domo-OG">
   <meta property="og:description" content="${descriptionOG || description}">
   <meta property="og:image" content="${ogImage}">
   <meta property="og:url" content="${baseUrl}${Router.path()}">
