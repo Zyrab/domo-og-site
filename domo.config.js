@@ -4,7 +4,7 @@ export default {
   routesFile: "./src/routes.js",
   layout: "./src/components/layout/layout.js",
   author: "Zyrab",
-  baseUrl: "https://www.og.zyrab.dev/",
+  baseUrl: "https://og.zyrab.dev/",
   lang: "en",
   theme: "auto",
   exclude: ["js", "css", "app-ads.txt", "assets", "data"],
