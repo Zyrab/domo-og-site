@@ -12,6 +12,7 @@
   opacity: 0;
   white-space: nowrap;
   z-index: 50;
+  transition: opacity 0.2s;
 
   /* Neo-Brutalist styling (borrowed directly from your badges!) */
   font-family: "Public Sans", sans-serif;

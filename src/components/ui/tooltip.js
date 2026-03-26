@@ -8,24 +8,21 @@ import Domo from "@zyrab/domo";
  * children: [Button({...})] // The thing you hover over
  * })
  */
-export default function createTooltip(props = {}) {
-  const { text = "", position = "top", variant = "dark", child = [] } = props;
+export default function createTooltip({ text = "", position = "top", variant = "dark", child = [] }) {
+  const tooltipId = `tt-${Math.random().toString(36).slice(2, 11)}`;
 
-  // 1. The hidden popup bubble
   const popup = Domo("div")
     .cls(`tooltip-popup tooltip-${position} tooltip-${variant}`)
     .txt(text)
-    .attr({ role: "tooltip" });
+    .attr({ role: "tooltip", id: tooltipId });
 
-  // 2. The wrapper that holds both the trigger and the popup
+  const enhancedChildren = Array.isArray(child)
+    ? child.map((c) => c.attr({ "aria-describedby": tooltipId }))
+    : [child.attr({ "aria-describedby": tooltipId })];
+
   const wrapper = Domo("div")
     .cls("tooltip-wrapper")
-    .child([
-      ...child, // Usually a Button or Icon
-      popup, // The hidden text
-    ])
-    // Accessibility: show tooltip if the user tabs to the button with their keyboard
-    .attr({ tabindex: "0" });
+    .child([...enhancedChildren, popup]);
 
   return wrapper;
 }
