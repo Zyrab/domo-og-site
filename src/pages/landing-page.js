@@ -1,5 +1,5 @@
 import Domo from "@zyrab/domo";
-import createInfoCard from "../components/layout/info-card.js";
+import createInfoCard from "../components/composed/info-card.js";
 import createHero from "../components/layout/hero.js";
 import createPlayground from "../components/layout/playground/playground.js";
 import createVersionBar from "../components/layout/version-bar.js";
@@ -8,6 +8,7 @@ import getLocales from "../assets/locales/get-locale.js";
 import { copyCode } from "../components/composed/code-copy.js";
 import { changeTemplate } from "../components/layout/playground/handlers/handle-change-template.js";
 import { toggleTemplateEditor } from "../components/layout/playground/handlers/handle-toggle-template-editor.js";
+import { toggleAccordion, handleKeyDown } from "../components/ui/accordion.js";
 
 export default function createLandingPage() {
   const f = getLocales("en", "featured");
@@ -29,5 +30,7 @@ export default function createLandingPage() {
       ".copy": copyCode,
       ".mode-switcher": toggleTemplateEditor,
       ".change-template": changeTemplate,
-    });
+      ".accordion__summary": toggleAccordion,
+    })
+    .on("keydown", handleKeyDown);
 }
